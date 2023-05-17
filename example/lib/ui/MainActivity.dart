@@ -5,7 +5,7 @@
  */
 
 import 'package:flutter/material.dart';
-import 'package:residemenu/residemenu.dart';
+import 'package:residemenu/residemenu.dart' as reside;
 import 'example/ExamplePage.dart';
 import 'test/TestPage.dart';
 import 'indicator/IndicatorPage.dart';
@@ -25,7 +25,7 @@ class MainActivity extends StatefulWidget {
 class _MainActivityState extends State<MainActivity>
     with TickerProviderStateMixin {
   List<Widget> views;
-  MenuController _menuController;
+  reside.MenuController _menuController;
   TabController _tabController;
   int _tabIndex = 1;
   PageController _pageController;
@@ -34,7 +34,7 @@ class _MainActivityState extends State<MainActivity>
     return Material(
       color: Colors.transparent,
       child: InkWell(
-        child: ResideMenuItem(
+        child: reside.ResideMenuItem(
           title: msg,
           icon: icon,
           right: const Icon(Icons.arrow_forward, color: Colors.grey),
@@ -50,8 +50,8 @@ class _MainActivityState extends State<MainActivity>
 
     super.initState();
     _tabController = TabController(length: 6, vsync: this);
-    _menuController =
-        MenuController(vsync: this, direction: ScrollDirection.LEFT);
+    _menuController = reside.MenuController(
+        vsync: this, direction: reside.ScrollDirection.LEFT);
     _pageController = PageController(initialPage: 1);
     views = [
       IndicatorPage(title: "指示器界面"),
@@ -63,7 +63,7 @@ class _MainActivityState extends State<MainActivity>
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return ResideMenu.scaffold(
+    return reside.ResideMenu.scaffold(
       controller: _menuController,
       enable3dRotate: true,
       child: Scaffold(
@@ -108,7 +108,7 @@ class _MainActivityState extends State<MainActivity>
         ),
       ),
       decoration: BoxDecoration(color: Colors.purple),
-      leftScaffold: MenuScaffold(
+      leftScaffold: reside.MenuScaffold(
         header: ConstrainedBox(
           constraints: BoxConstraints(maxHeight: 80.0, maxWidth: 80.0),
           child: CircleAvatar(

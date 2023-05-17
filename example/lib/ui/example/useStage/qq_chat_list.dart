@@ -183,9 +183,9 @@ class _QQChatListState extends State<QQChatList> {
                           margin: EdgeInsets.all(10.0),
                         ),
                       ),
-                      RaisedButton(
+                      ElevatedButton(
                         child: Text("发送"),
-                        color: Colors.blueAccent,
+                        // color: Colors.blueAccent,
                         onPressed: () {
                           _scrollController.jumpTo(0.0);
                           data.insert(

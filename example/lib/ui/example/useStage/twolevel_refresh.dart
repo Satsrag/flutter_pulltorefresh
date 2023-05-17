@@ -97,13 +97,13 @@ class _TwoLevelExampleState extends State<TwoLevelExample> {
                               appBar: AppBar(),
                               body: Column(
                                 children: <Widget>[
-                                  RaisedButton(
+                                  ElevatedButton(
                                     onPressed: () {
                                       Navigator.of(context).pop();
                                     },
                                     child: Text("点击这里返回上一页!"),
                                   ),
-                                  RaisedButton(
+                                  ElevatedButton(
                                     onPressed: () {
                                       _refreshController1.requestTwoLevel();
                                     },
@@ -145,7 +145,7 @@ class _TwoLevelExampleState extends State<TwoLevelExample> {
                   slivers: <Widget>[
                     SliverToBoxAdapter(
                       child: Container(
-                        child: RaisedButton(
+                        child: ElevatedButton(
                           onPressed: () {
                             Navigator.of(context).pop();
                           },
@@ -205,8 +205,8 @@ class TwoLevelWidget extends StatelessWidget {
           Center(
             child: Wrap(
               children: <Widget>[
-                RaisedButton(
-                  color: Colors.greenAccent,
+                ElevatedButton(
+                  // color: Colors.greenAccent,
                   onPressed: () {},
                   child: Text("登陆"),
                 ),
